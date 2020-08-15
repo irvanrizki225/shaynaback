@@ -26,3 +26,6 @@ Route::resource('productgalleries', 'ProductGalleryController');
 Route::get('transaction/{id}/set-status', 'TransactionController@setStatus')
     ->name('transaction.status');
 Route::resource('transaction', 'TransactionController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
