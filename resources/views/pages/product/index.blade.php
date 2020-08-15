@@ -27,7 +27,7 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->type }}</td>
-                                            <td>{{ $item->price }}</td>
+                                            <td>$ {{ $item->price }}</td>
                                             <td>{{ $item->quantity }}</td>
                                             <td>
                                                 <a href="{{ route('product.gallery', $item->id) }}" class="btn btn-info btn-sm">

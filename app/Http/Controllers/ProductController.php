@@ -29,7 +29,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $items = product::all();
+        $items = Product::all();
         return view('pages.product.index')->with([
             'items' => $items
         ]);
@@ -79,7 +79,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $item = product::findOrfail($id); 
+        $item = Product::findOrfail($id); 
 
         return view('pages.product.edit')->with([
             'item'=>$item
@@ -98,7 +98,7 @@ class ProductController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->name);
 
-        $item = product::findOrfail($id);
+        $item = Product::findOrfail($id);
         $item->update($data);
 
         return redirect()->route('product.index');
@@ -112,7 +112,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $item = product::findOrfail($id);
+        $item = Product::findOrfail($id);
         $item->delete();
 
         ProductGallery::where('product_id', $id)->delete();
@@ -122,13 +122,13 @@ class ProductController extends Controller
 
     public function gallery(Request $request,$id)
     {
-        $product = product::findorFail($id);
+        $Product = Product::findorFail($id);
         $items = ProductGallery::with('product')
             ->where('product_id', $id)
             ->get();
 
         return view('pages.product.gallery')->with([
-            'product' => $product,
+            'product' => $Product,
             'items' => $items
         ]);
     }

@@ -41,7 +41,7 @@ class ProductGalleryController extends Controller
      */
     public function create()
     {
-        $product = product::all();
+        $product = Product::all();
 
 
         return view('pages.productgalleries.create')->with([

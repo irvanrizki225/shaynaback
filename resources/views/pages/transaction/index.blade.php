@@ -56,17 +56,17 @@
                                                 @endif
                                                 
                                                 <a href="#mymodal"
-                                                    data-remote=" {{ route('transaction.show', $item->id) }}"
+                                                    data-remote="{{ route('transaction.show', $item->id) }}"
                                                     data-toggle="modal"
                                                     data-target="#mymodal"
-                                                    data-title ="Detail Transaksi oke {{ $item->uuid }}"
+                                                    data-title="Detail Transaksi {{ $item->uuid }}"
                                                     class="btn btn-info btn-sm">
-                                                    <i class="fa fa-eye"> </i>
+                                                    <i class="fa fa-eye"></i>
                                                 </a>
                                                 
-                                                <a href="{{ route('transaction.show', $item->id)    }}" class="btn btn-primary btn-sm">
+                                                {{-- <a href="{{ route('transaction.show', $item->id)    }}" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-eye"> </i>
-                                                </a>
+                                                </a> --}}
 
                                                 <a href="{{ route('transaction.edit', $item->id)    }}" class="btn btn-primary btn-sm">
                                                     <i class="fa fa-pencil"> </i>
